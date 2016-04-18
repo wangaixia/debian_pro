@@ -1,5 +1,5 @@
 #!/usr/bin/python3.2
-#--encoding-uf8--
+#--encoding:utf-8--
 import os
 import tarfile
 import shutil
@@ -7,7 +7,12 @@ import datetime
 import time
 import sys
 
-pro=[]
-for root,dir,files in os.walk('/tmp/'):
-    for file in files:
-        pro=pro.append(file)
+INPUT = input("place input something: ")
+pro = []
+for dirpath, dirnames, filenames in os.walk('/tmp'):
+    pro.extend(filenames)
+    break
+if INPUT in pro:
+    print("exits")
+else:
+    print("no exits")
