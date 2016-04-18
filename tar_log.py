@@ -8,5 +8,6 @@ import time
 import sys
 
 pro=[]
-for file in os.system('ls -d /tmp'):
-    pro=pro.__add__(file)
+for root,dir,files in os.walk('/tmp/'):
+    for file in files:
+        pro=pro.append(file)
